@@ -17,12 +17,12 @@ ports_description:
   "80/tcp": "Trilium web interface"
 webui: "http://[HOST]:[PORT:80]"
 environment:
-  TRILIUM_DATA_DIR: "/config/trilium"
+  TRILIUM_DATA_DIR: "/home/node/trilium-data"
   TRILIUM_NETWORK_PORT: "80"
 map:
   - type: addon_config
     read_only: false
-    path: /config
+    path: /home/node/trilium-data
 backup: cold
 io: auto
 privileged: []

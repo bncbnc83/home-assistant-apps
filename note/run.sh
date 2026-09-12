@@ -12,4 +12,6 @@ TZ="$(node -e '
 
 export TZ
 
-exec sh ./start-docker.sh
+# Use Trilium's own startup script. It starts as root, fixes ownership of
+# /home/node/trilium-data, then drops privileges to the configured node user.
+exec ./start-docker.sh
