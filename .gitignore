@@ -1,0 +1,25 @@
+# Runtime data / secrets
+options.json
+.env
+.env.*
+*.secret
+*.pem
+*.key
+*.crt
+
+# Databases / backups / archives
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+*.bak
+
+# Local/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

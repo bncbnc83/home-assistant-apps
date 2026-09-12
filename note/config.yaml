@@ -1,0 +1,29 @@
+name: "Trilium Notes"
+version: "0.105.0"
+slug: "note"
+description: "TriliumNext Notes packaged as a Home Assistant app"
+url: "https://github.com/TriliumNext/Trilium"
+arch:
+  - amd64
+startup: application
+boot: auto
+options:
+  TZ: "UTC"
+schema:
+  TZ: str
+ports:
+  "80/tcp": 8080
+ports_description:
+  "80/tcp": "Trilium web interface"
+webui: "http://[HOST]:[PORT:80]"
+environment:
+  TRILIUM_DATA_DIR: "/config/trilium"
+  TRILIUM_NETWORK_PORT: "80"
+map:
+  - type: addon_config
+    read_only: false
+    path: /config
+backup: cold
+io: auto
+privileged: []
+host_network: false

@@ -1,0 +1,28 @@
+name: "Flame Dashboard"
+version: "2.4.0"
+slug: "flame"
+description: "Flame dashboard packaged as a Home Assistant app"
+url: "https://github.com/pawelmalak/flame"
+arch:
+  - amd64
+startup: application
+boot: auto
+options:
+  TZ: "UTC"
+  PASSWORD: null
+schema:
+  TZ: str
+  PASSWORD: password
+ports:
+  "5005/tcp": 5005
+ports_description:
+  "5005/tcp": "Flame web interface"
+webui: "http://[HOST]:[PORT:5005]"
+map:
+  - type: addon_config
+    read_only: false
+    path: /app/data
+backup: cold
+io: auto
+privileged: []
+host_network: false
