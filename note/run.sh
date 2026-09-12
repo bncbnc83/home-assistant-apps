@@ -12,6 +12,8 @@ TZ="$(node -e '
 
 export TZ
 
-# Use Trilium's own startup script. It starts as root, fixes ownership of
-# /home/node/trilium-data, then drops privileges to the configured node user.
-exec ./start-docker.sh
+# Preserve the upstream Node image entrypoint and Trilium's official command.
+# The upstream Trilium image intentionally starts its script via:
+#   sh ./start-docker.sh
+# rather than executing start-docker.sh directly.
+exec docker-entrypoint.sh "$@"
